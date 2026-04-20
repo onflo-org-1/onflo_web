@@ -1,0 +1,78 @@
+/* ── Eyebrow tag ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--fn-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-primary-d);
+  background: var(--clr-primary-ll);
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--r-full);
+  margin-bottom: var(--sp-4);
+}
+.tag-dot {
+  width: 6px; height: 6px;
+  background: var(--clr-primary);
+  border-radius: 50%;
+  animation: blink 2.4s infinite;
+}
+
+/* ── Section heading ── */
+.section-title {
+  font-family: var(--fn-display);
+  font-size: clamp(2rem, 3.5vw, 2.9rem);
+  font-weight: 800;
+  color: var(--clr-text);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.section-title em {
+  font-style: normal;
+  color: var(--clr-primary);
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--clr-muted);
+  max-width: 540px;
+  line-height: 1.8;
+  margin-top: var(--sp-4);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.78rem 1.7rem;
+  border-radius: var(--r-full);
+  font-family: var(--fn-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 2px solid transparent;
+  transition: all var(--t-base);
+}
+.btn-primary {
+  background: var(--clr-primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--clr-primary-d);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--clr-primary);
+  border-color: var(--clr-primary);
+}
+.btn-outline:hover {
+  background: var(--clr-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}

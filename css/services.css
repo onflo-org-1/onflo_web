@@ -1,0 +1,65 @@
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-5);
+}
+
+.svc-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8) var(--sp-8) var(--sp-6);
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base), background var(--t-base);
+}
+.svc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--clr-primary-l);
+  background: oklch(0.995 0.003 202);
+}
+
+.svc-num {
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-5);
+  font-family: var(--fn-display);
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--clr-border);
+  line-height: 1;
+  user-select: none;
+  transition: color var(--t-base);
+  pointer-events: none;
+}
+.svc-card:hover .svc-num {
+  color: var(--clr-primary-ll);
+}
+
+.svc-icon {
+  width: 50px; height: 50px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--sp-5);
+  background: var(--clr-primary-ll);
+  transition: background var(--t-base);
+}
+.svc-card:hover .svc-icon { background: var(--clr-primary-l); }
+
+.svc-card h3 {
+  font-family: var(--fn-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--sp-3);
+  color: var(--clr-text);
+  letter-spacing: -0.01em;
+}
+.svc-card p {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  line-height: 1.75;
+}

@@ -1,0 +1,65 @@
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+.team-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-8) var(--sp-6) var(--sp-6);
+  text-align: center;
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+  position: relative;
+  overflow: hidden;
+}
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--clr-primary-l);
+}
+
+.team-monogram {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--clr-border);
+  margin: 0 auto var(--sp-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fn-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--clr-primary);
+  background: var(--clr-primary-ll);
+  transition: background var(--t-base), border-color var(--t-base);
+}
+.team-card:hover .team-monogram {
+  background: var(--clr-primary-l);
+  border-color: var(--clr-primary);
+}
+
+.team-card h3 {
+  font-family: var(--fn-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--clr-text);
+}
+.team-role {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-4);
+}
+.team-bio {
+  font-size: 0.875rem;
+  color: var(--clr-muted);
+  line-height: 1.68;
+}
+
+@media (max-width: 960px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .team-grid { grid-template-columns: 1fr; } }

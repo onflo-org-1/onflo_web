@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onflotech — IT Solutions Private Limited</title>
+  <meta name="description" content="Onflotech delivers custom software, cloud infrastructure, AI automation, and strategic IT consulting. We build. We deliver.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Mulish:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/team.css">
+  <link rel="stylesheet" href="css/testimonials.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+<!-- ─── Navigation ────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" aria-label="Onflotech home">
+      <img src="assets/logo-light.png" alt="Onflotech — IT Solutions Private Limited">
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-overlay" id="mobileOverlay">
+  <div class="mob-logo">
+    <img src="assets/logo-light.png" alt="Onflotech">
+  </div>
+  <a href="#home"         onclick="closeMenu()">Home</a>
+  <a href="#services"     onclick="closeMenu()">Services</a>
+  <a href="#about"        onclick="closeMenu()">About</a>
+  <a href="#team"         onclick="closeMenu()">Team</a>
+  <a href="#testimonials" onclick="closeMenu()">Clients</a>
+  <a href="#contact"      onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ─── Hero ──────────────────────────────────────────────── -->
+<section id="home">
+  <div class="hero-inner">
+
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        IT Solutions Private Limited
+      </div>
+      <h1 class="hero-title">
+        We Build.<br>
+        <em>We Deliver.</em>
+      </h1>
+      <p class="hero-sub">
+        Empowering businesses through innovative technology. From custom software to cloud infrastructure — we turn your vision into a working, scalable reality.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">
+          Get in Touch
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>50+</strong>
+          <span>Projects Delivered</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="hero-stat">
+          <strong>30+</strong>
+          <span>Happy Clients</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="hero-stat">
+          <strong>4</strong>
+          <span>Countries Served</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orbit-bg">
+        <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="240" cy="240" r="210" stroke="rgba(8,145,178,0.07)" stroke-width="1"/>
+          <circle cx="240" cy="240" r="155" stroke="rgba(8,145,178,0.10)" stroke-width="1"/>
+          <circle cx="240" cy="240" r="95"  stroke="rgba(8,145,178,0.08)" stroke-width="1"/>
+          <!-- Orbital arc (echoing logo swirl) -->
+          <path d="M 120 170 C 220 40 420 100 400 260 C 380 400 180 420 120 300"
+                stroke="rgba(8,145,178,0.18)" stroke-width="1.5" fill="none"
+                stroke-dasharray="6 5"/>
+          <!-- Star nodes at orbital points -->
+          <circle cx="240" cy="35"  r="4" fill="rgba(8,145,178,0.35)"/>
+          <circle cx="410" cy="155" r="3" fill="rgba(8,145,178,0.25)"/>
+          <circle cx="420" cy="310" r="5" fill="rgba(176,122,40,0.45)"/>
+          <circle cx="240" cy="440" r="3" fill="rgba(8,145,178,0.20)"/>
+          <circle cx="65"  cy="320" r="4" fill="rgba(8,145,178,0.30)"/>
+          <circle cx="75"  cy="160" r="3" fill="rgba(176,122,40,0.30)"/>
+          <!-- Central glow node -->
+          <circle cx="240" cy="240" r="16" fill="rgba(8,145,178,0.12)"/>
+          <circle cx="240" cy="240" r="8"  fill="rgba(8,145,178,0.25)"/>
+          <circle cx="240" cy="240" r="3"  fill="rgba(8,145,178,0.70)"/>
+        </svg>
+      </div>
+
+      <div class="hero-cards">
+        <div class="hcard hcard-1">
+          <div class="hcard-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <span class="hcard-num">50+</span>
+          <span class="hcard-label">Projects Delivered</span>
+        </div>
+
+        <div class="hcard hcard-2 hcard-accent">
+          <div class="hcard-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <span class="hcard-num">3+</span>
+          <span class="hcard-label">Years Track Record</span>
+        </div>
+
+        <div class="hcard hcard-3">
+          <div class="hcard-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span class="hcard-num">4</span>
+          <span class="hcard-label">Countries Served</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Services ──────────────────────────────────────────── -->
+<section id="services" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-hdr center">
+      <div class="tag fi"><span class="tag-dot"></span>What We Do</div>
+      <h2 class="section-title fi d1">Our <em>Core Services</em></h2>
+      <p class="section-sub fi d2">End-to-end technology solutions crafted for your goals — from the first line of code to ongoing strategic advisory.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="svc-card fi">
+        <span class="svc-num" aria-hidden="true">01</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3>Web &amp; App Development</h3>
+        <p>Custom web apps, mobile applications, and enterprise software crafted for scale, performance, and exceptional user experience.</p>
+      </div>
+
+      <div class="svc-card fi d1">
+        <span class="svc-num" aria-hidden="true">02</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+          </svg>
+        </div>
+        <h3>Cloud &amp; DevOps</h3>
+        <p>Scalable cloud architecture on AWS, GCP, or Azure. CI/CD pipelines, container orchestration, and infrastructure as code — built for reliability.</p>
+      </div>
+
+      <div class="svc-card fi d2">
+        <span class="svc-num" aria-hidden="true">03</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><circle cx="19" cy="5" r="3"/>
+          </svg>
+        </div>
+        <h3>AI &amp; Automation</h3>
+        <p>Intelligent AI integrations, workflow automation bots, and smart data pipelines that eliminate manual tasks and surface actionable insights.</p>
+      </div>
+
+      <div class="svc-card fi d3">
+        <span class="svc-num" aria-hidden="true">04</span>
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <h3>IT Consulting &amp; Strategy</h3>
+        <p>Technology advisory, architecture reviews, and digital transformation roadmaps that align your technology investments with real business objectives.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── About ────────────────────────────────────────────── -->
+<section id="about" class="section">
+  <div class="section-inner">
+    <div class="about-layout">
+
+      <div class="about-body">
+        <div class="tag fi"><span class="tag-dot"></span>Our Story</div>
+        <h2 class="section-title fi d1">Bridging Business &amp; <em>Technology</em></h2>
+
+        <p class="fi d2" style="margin-top:1.1rem;">Onflotech was founded with a clear mission: to close the gap between what businesses need and what technology can actually deliver. Too many companies struggle with misaligned tech choices, slow delivery, and costly vendor lock-in.</p>
+        <p class="fi d2">Our team of seasoned engineers and strategists partners closely with clients — from ambitious startups to scaling enterprises — to build solutions that are practical, maintainable, and built to last.</p>
+
+        <div class="about-values fi d3">
+          <div class="about-value">
+            <div class="value-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Senior engineers — not junior outsourcing
+          </div>
+          <div class="about-value">
+            <div class="value-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Transparent communication throughout
+          </div>
+          <div class="about-value">
+            <div class="value-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            Code you own and can maintain
+          </div>
+        </div>
+
+        <div class="about-stats fi d4">
+          <div class="stat"><strong>3+</strong><span>Years in Business</span></div>
+          <div class="stat"><strong>50+</strong><span>Projects Delivered</span></div>
+          <div class="stat"><strong>30+</strong><span>Happy Clients</span></div>
+          <div class="stat"><strong>4</strong><span>Countries Served</span></div>
+        </div>
+      </div>
+
+      <div class="about-visual fi d2">
+        <img class="about-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Onflotech team collaborating" loading="lazy">
+        <div class="about-badge">
+          <strong>100%</strong>
+          <span>Remote-first</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Team ─────────────────────────────────────────────── -->
+<section id="team" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-hdr center">
+      <div class="tag fi"><span class="tag-dot"></span>The People</div>
+      <h2 class="section-title fi d1">Meet Our <em>Team</em></h2>
+      <p class="section-sub fi d2">Experienced engineers and strategists who care deeply about quality, craft, and client outcomes.</p>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card fi">
+        <div class="team-monogram">AJ</div>
+        <h3>Alex Johnson</h3>
+        <div class="team-role">CEO &amp; Founder</div>
+        <p class="team-bio">Visionary leader with 12+ years in enterprise software. Drives strategy and ensures every client engagement creates lasting, measurable value.</p>
+      </div>
+
+      <div class="team-card fi d1">
+        <div class="team-monogram">PM</div>
+        <h3>Priya Mehta</h3>
+        <div class="team-role">Chief Technology Officer</div>
+        <p class="team-bio">Cloud architect and distributed systems expert. Leads our technical direction, ensuring the right tool is always chosen for the right job.</p>
+      </div>
+
+      <div class="team-card fi d2">
+        <div class="team-monogram">SR</div>
+        <h3>Sam Rivera</h3>
+        <div class="team-role">Lead Engineer</div>
+        <p class="team-bio">Full-stack engineer passionate about clean code and great UX. Turns complex requirements into elegant, ship-ready products.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Testimonials ──────────────────────────────────────── -->
+<section id="testimonials" class="section">
+  <div class="section-inner">
+    <div class="section-hdr center">
+      <div class="tag fi"><span class="tag-dot"></span>Client Love</div>
+      <h2 class="section-title fi d1">What Our <em>Clients Say</em></h2>
+      <p class="section-sub fi d2">Real outcomes from real partnerships — we let our work speak for itself.</p>
+    </div>
+    <div class="testi-grid">
+
+      <div class="testi-card fi">
+        <div class="testi-author">
+          <div class="testi-avatar">MK</div>
+          <div class="testi-info">
+            <strong>Marcus Klein</strong>
+            <span>CEO, NovaSpark Inc.</span>
+          </div>
+        </div>
+        <div class="testi-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testi-text">"Onflotech delivered our platform ahead of schedule and under budget. The code quality and communication throughout were exceptional. They're not a vendor — they're a genuine partner."</p>
+      </div>
+
+      <div class="testi-card fi d1">
+        <div class="testi-author">
+          <div class="testi-avatar">SL</div>
+          <div class="testi-info">
+            <strong>Sofia Larsson</strong>
+            <span>CTO, Brio Analytics</span>
+          </div>
+        </div>
+        <div class="testi-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testi-text">"Their cloud migration expertise cut our infrastructure costs by 40%. The DevOps team was responsive, knowledgeable, and always one step ahead of potential issues. Highly recommended."</p>
+      </div>
+
+      <div class="testi-card fi d2">
+        <div class="testi-author">
+          <div class="testi-avatar">RN</div>
+          <div class="testi-info">
+            <strong>Raj Nair</strong>
+            <span>Operations Lead, Finscale</span>
+          </div>
+        </div>
+        <div class="testi-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testi-text">"The AI automation solution they built reduced our manual processing time by 70%. Their strategic advisory alone was worth the engagement — they became a trusted long-term partner."</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contact ───────────────────────────────────────────── -->
+<section id="contact" class="section section-alt">
+  <div class="section-inner">
+    <div class="section-hdr center">
+      <div class="tag fi"><span class="tag-dot"></span>Get in Touch</div>
+      <h2 class="section-title fi d1">Let's <em>Work Together</em></h2>
+      <p class="section-sub fi d2">Have a project in mind? Send us a message and we'll respond within 24 hours.</p>
+    </div>
+
+    <div class="contact-layout">
+
+      <div class="contact-info fi">
+        <h3>Contact Information</h3>
+        <p>We're a remote-first global team. Wherever you are, we're ready to help you build something great.</p>
+        <div class="contact-items">
+          <div class="c-item">
+            <div class="c-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="c-text"><strong>Email</strong><span>hello@onflotech.com</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="c-text"><strong>Location</strong><span>Global &middot; Remote-first</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="c-text"><strong>Response Time</strong><span>Within 24 hours</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fi d1">
+        <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-row">
+            <div class="fg">
+              <label for="name">Full Name</label>
+              <input id="name" type="text" placeholder="John Smith" required>
+            </div>
+            <div class="fg">
+              <label for="email">Email Address</label>
+              <input id="email" type="email" placeholder="john@company.com" required>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" placeholder="How can we help?">
+          </div>
+          <div class="fg">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell us about your project, timeline, and goals..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">Send Message →</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/logo-dark.png" alt="Onflotech">
+        </div>
+        <p>We bridge the gap between business ambition and technology delivery — building thoughtful, scalable solutions since 2021.</p>
+        <div class="socials">
+          <a href="#" class="soc-btn" aria-label="LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="soc-btn" aria-label="Twitter / X">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" class="soc-btn" aria-label="GitHub">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Web &amp; App Dev</a></li>
+          <li><a href="#services">Cloud &amp; DevOps</a></li>
+          <li><a href="#services">AI &amp; Automation</a></li>
+          <li><a href="#services">IT Consulting</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2025 Onflotech IT Solutions Pvt. Ltd. All rights reserved.</span>
+      <span>onflotech.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+
+.testi-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+.testi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Author at top (editorial style) */
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+.testi-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--clr-primary-ll);
+  border: 2px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fn-display);
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: var(--clr-primary);
+  flex-shrink: 0;
+}
+.testi-info strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+.testi-info span {
+  font-size: 0.76rem;
+  color: var(--clr-muted);
+}
+
+.testi-stars {
+  display: flex;
+  gap: 3px;
+}
+.testi-stars span {
+  color: var(--clr-accent);
+  font-size: 0.85rem;
+}
+
+.testi-text {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  line-height: 1.75;
+  font-style: italic;
+  flex: 1;
+}
+
+@media (max-width: 960px) { .testi-grid { grid-template-columns: 1fr; max-width: 520px; } }

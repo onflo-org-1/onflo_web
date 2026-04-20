@@ -1,0 +1,52 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--fn-body);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.68;
+  overflow-x: hidden;
+}
+
+img    { display: block; max-width: 100%; }
+a      { text-decoration: none; color: inherit; }
+ul     { list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+
+h1, h2, h3, h4 {
+  font-family: var(--fn-display);
+  line-height: 1.12;
+}
+
+/* ── Section scaffolding ── */
+.section {
+  padding: var(--sp-24) var(--sp-8);
+}
+.section-alt {
+  background: var(--clr-bg-alt);
+}
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-hdr {
+  margin-bottom: var(--sp-12);
+}
+.section-hdr.center {
+  text-align: center;
+}
+.section-hdr.center .section-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 580px) {
+  .section { padding: var(--sp-16) var(--sp-5); }
+}
