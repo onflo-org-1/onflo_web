@@ -394,24 +394,26 @@
       </div>
 
       <div class="contact-form fi d1">
-        <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleSubmit(event)" novalidate>
+          <input type="hidden" name="access_key" value="927a954a-e88d-48b6-b8b6-7fff1020a918">
+          <input type="hidden" name="subject" value="New Contact Form Submission — Onflotech">
           <div class="form-row">
             <div class="fg">
               <label for="name">Full Name</label>
-              <input id="name" type="text" placeholder="John Smith" required>
+              <input id="name" name="name" type="text" placeholder="John Smith" required>
             </div>
             <div class="fg">
               <label for="email">Email Address</label>
-              <input id="email" type="email" placeholder="john@company.com" required>
+              <input id="email" name="email" type="email" placeholder="john@company.com" required>
             </div>
           </div>
           <div class="fg">
-            <label for="subject">Subject</label>
-            <input id="subject" type="text" placeholder="How can we help?">
+            <label for="topic">Subject</label>
+            <input id="topic" name="topic" type="text" placeholder="How can we help?">
           </div>
           <div class="fg">
             <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell us about your project, timeline, and goals..." required></textarea>
+            <textarea id="message" name="message" placeholder="Tell us about your project, timeline, and goals..." required></textarea>
           </div>
           <button type="submit" class="form-submit" id="submitBtn">Send Message →</button>
         </form>
