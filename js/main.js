@@ -1,7 +1,7 @@
 /* ── Nav scroll shadow + active link ── */
 const nav      = document.getElementById('nav');
 const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-menu a');
+const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 10);

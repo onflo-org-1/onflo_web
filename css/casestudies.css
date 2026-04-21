@@ -1,0 +1,99 @@
+.cases-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8);
+}
+
+.case-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-8);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+}
+.case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--clr-primary-l);
+}
+
+.case-index {
+  font-family: var(--fn-display);
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--clr-border);
+  line-height: 1;
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-6);
+  user-select: none;
+  pointer-events: none;
+  transition: color var(--t-base);
+}
+.case-card:hover .case-index { color: var(--clr-primary-ll); }
+
+.case-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+.case-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--r-full);
+}
+.case-badge.platform {
+  background: var(--clr-primary-ll);
+  color: var(--clr-primary-d);
+}
+.case-badge.social {
+  background: var(--clr-accent-l);
+  color: oklch(0.48 0.12 58);
+}
+
+.case-name {
+  font-family: var(--fn-display);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--clr-text);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-2);
+}
+
+.case-tagline {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+  margin-bottom: var(--sp-6);
+  font-style: italic;
+}
+
+.case-block {
+  margin-bottom: var(--sp-4);
+}
+.case-block-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  margin-bottom: var(--sp-2);
+}
+.case-block p {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  line-height: 1.75;
+}
+
+@media (max-width: 768px) {
+  .cases-grid { grid-template-columns: 1fr; }
+}

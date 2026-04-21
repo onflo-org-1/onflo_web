@@ -1,0 +1,95 @@
+#commitment {
+  background: var(--clr-dark);
+  color: rgba(255,255,255, 0.65);
+  padding: var(--sp-24) var(--sp-8);
+}
+
+.commitment-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.commitment-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-primary-l);
+  background: rgba(8,145,178, 0.12);
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--r-full);
+  margin-bottom: var(--sp-6);
+  border: 1px solid rgba(8,145,178, 0.2);
+}
+
+.commitment-title {
+  font-family: var(--fn-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-6);
+}
+
+.commitment-body {
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: var(--sp-8);
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.commitment-promises {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+  text-align: left;
+  margin-bottom: var(--sp-10);
+}
+.promise-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: rgba(255,255,255, 0.8);
+  line-height: 1.5;
+}
+.promise-dot {
+  width: 6px; height: 6px;
+  background: var(--clr-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.commitment-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.85rem 2rem;
+  background: var(--clr-primary);
+  color: #fff;
+  border-radius: var(--r-full);
+  font-family: var(--fn-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background var(--t-base), transform var(--t-base), box-shadow var(--t-base);
+}
+.commitment-cta:hover {
+  background: var(--clr-primary-d);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary);
+}
+
+@media (max-width: 580px) {
+  .commitment-promises { grid-template-columns: 1fr; }
+  #commitment { padding: var(--sp-16) var(--sp-5); }
+}
