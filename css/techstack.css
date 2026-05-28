@@ -47,7 +47,7 @@
   border: 1px solid var(--clr-border);
   padding: 0.3rem 0.75rem;
   border-radius: var(--r-full);
-  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 .stack-pill:hover {
   background: var(--clr-primary-ll);

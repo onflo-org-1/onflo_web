@@ -92,7 +92,7 @@
   font-size: 0.9rem;
   color: var(--clr-text);
   outline: none;
-  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 .fg input:focus,
 .fg textarea:focus {
@@ -115,7 +115,7 @@
   font-size: 0.93rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  transition: background var(--t-base), transform var(--t-base), box-shadow var(--t-base);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform var(--t-base);
 }
 .form-submit:hover {
   background: var(--clr-primary-d);

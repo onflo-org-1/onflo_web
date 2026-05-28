@@ -12,7 +12,7 @@
   position: relative;
   overflow: hidden;
   cursor: default;
-  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base), background var(--t-base);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color 0.3s ease, background 0.3s ease;
 }
 .svc-card:hover {
   transform: translateY(-6px);
@@ -31,7 +31,7 @@
   color: var(--clr-border);
   line-height: 1;
   user-select: none;
-  transition: color var(--t-base);
+  transition: color 0.3s ease;
   pointer-events: none;
 }
 .svc-card:hover .svc-num {
@@ -46,7 +46,7 @@
   justify-content: center;
   margin-bottom: var(--sp-5);
   background: var(--clr-primary-ll);
-  transition: background var(--t-base);
+  transition: background 0.3s ease;
 }
 .svc-card:hover .svc-icon { background: var(--clr-primary-l); }
 

@@ -48,7 +48,7 @@ footer {
   align-items: center;
   justify-content: center;
   color: rgba(255,255,255, 0.45);
-  transition: background var(--t-base), color var(--t-base), transform var(--t-base);
+  transition: background 0.3s ease, color 0.3s ease, transform var(--t-base);
 }
 .soc-btn:hover {
   background: var(--clr-primary);
