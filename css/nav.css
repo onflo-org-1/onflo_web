@@ -2,16 +2,15 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: oklch(0.985 0.004 204 / 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--clr-bg);
   border-bottom: 1px solid transparent;
   padding: 0.7rem 0;
-  transition: box-shadow var(--t-base), border-color var(--t-base);
+  transition: box-shadow var(--t-base), border-color var(--t-base), background var(--t-base);
 }
 #nav.scrolled {
-  box-shadow: 0 2px 20px rgba(22, 28, 45, 0.08);
+  background: var(--clr-surface);
   border-bottom-color: var(--clr-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-inner {
@@ -46,31 +45,33 @@
   content: '';
   position: absolute;
   bottom: -3px; left: 0; right: 0;
-  height: 2px;
-  background: var(--clr-primary);
-  border-radius: 2px;
+  height: 1px;
+  background: var(--clr-text);
+  border-radius: 0;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--t-base);
 }
 .nav-menu a:hover,
-.nav-menu a.active      { color: var(--clr-primary); }
+.nav-menu a.active      { color: var(--clr-text); }
 .nav-menu a:hover::after,
 .nav-menu a.active::after { transform: scaleX(1); }
 
 .nav-cta {
-  background: var(--clr-primary) !important;
-  color: #fff !important;
+  background: var(--clr-text) !important;
+  color: var(--clr-surface) !important;
   padding: 0.46rem 1.2rem !important;
-  border-radius: var(--r-full) !important;
-  font-size: 0.84rem !important;
+  border-radius: var(--r-sm) !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 600 !important;
 }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover  {
-  background: var(--clr-primary-d) !important;
+  background: var(--clr-primary) !important;
   color: #fff !important;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(8,145,178, 0.28);
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* ── Hamburger ── */
@@ -134,15 +135,15 @@
 .mobile-overlay a:hover { color: var(--clr-primary); }
 
 .mobile-overlay .mob-cta {
-  background: var(--clr-primary);
-  color: #fff !important;
+  background: var(--clr-text);
+  color: var(--clr-surface) !important;
   padding: 0.55rem 2.2rem;
-  border-radius: var(--r-full);
+  border-radius: var(--r-sm);
   margin-top: var(--sp-3);
-  font-weight: 700;
+  font-weight: 600;
 }
 .mobile-overlay .mob-cta:hover {
-  background: var(--clr-primary-d);
+  background: var(--clr-primary);
   color: #fff !important;
 }
 

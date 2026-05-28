@@ -1,29 +1,19 @@
 #home {
-  background: var(--clr-bg);
+  background-color: var(--clr-bg);
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 79px,
+    oklch(0.87 0.008 220 / 0.35) 79px,
+    oklch(0.87 0.008 220 / 0.35) 80px
+  );
+  background-size: 100% 80px;
   min-height: calc(100vh - 66px);
   display: flex;
   align-items: center;
   padding: var(--sp-20) var(--sp-8) var(--sp-16);
   position: relative;
   overflow: hidden;
-}
-#home::before {
-  content: '';
-  position: absolute;
-  top: -180px; right: -180px;
-  width: 580px; height: 580px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(8,145,178, 0.07) 0%, transparent 70%);
-  pointer-events: none;
-}
-#home::after {
-  content: '';
-  position: absolute;
-  bottom: -80px; left: 8%;
-  width: 380px; height: 380px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(176,122,40, 0.05) 0%, transparent 70%);
-  pointer-events: none;
 }
 
 .hero-inner {
@@ -43,37 +33,37 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: var(--clr-primary-ll);
-  border: 1px solid rgba(8,145,178, 0.2);
-  color: var(--clr-primary-d);
+  background: transparent;
+  border: 1px solid var(--clr-border);
+  color: var(--clr-muted);
   font-family: var(--fn-body);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--ls-wide);
   text-transform: uppercase;
-  padding: 0.35rem 1rem;
-  border-radius: var(--r-full);
+  padding: 0.25rem 0.65rem;
+  border-radius: 0;
   margin-bottom: var(--sp-6);
 }
 .badge-dot {
   width: 6px; height: 6px;
   background: var(--clr-primary);
   border-radius: 50%;
-  animation: blink 2s infinite;
+  animation: none;
 }
 
 .hero-title {
   font-family: var(--fn-display);
-  font-size: clamp(3.2rem, 6vw, 5.8rem);
-  font-weight: 900;
-  line-height: 1.0;
+  font-size: clamp(3.4rem, 6.5vw, 6.2rem);
+  font-weight: 800;
+  line-height: 0.96;
   color: var(--clr-text);
   margin-bottom: var(--sp-6);
-  letter-spacing: -0.02em;
+  letter-spacing: var(--ls-tight);
 }
 .hero-title em {
   font-style: italic;
-  color: var(--clr-primary);
+  color: var(--clr-accent-dark);
 }
 
 .hero-sub {
@@ -104,7 +94,7 @@
   font-family: var(--fn-display);
   font-size: 1.9rem;
   font-weight: 900;
-  color: var(--clr-primary);
+  color: var(--clr-text);
   line-height: 1;
 }
 .hero-stat span {
@@ -166,7 +156,8 @@
 
 .hcard-icon {
   width: 34px; height: 34px;
-  background: var(--clr-primary-ll);
+  background: var(--clr-bg-alt);
+  border: 1px solid var(--clr-border);
   border-radius: var(--r-sm);
   display: flex;
   align-items: center;
@@ -178,7 +169,7 @@
   font-family: var(--fn-display);
   font-size: 2.4rem;
   font-weight: 900;
-  color: var(--clr-primary);
+  color: var(--clr-text);
   line-height: 1;
   margin-bottom: 2px;
 }
@@ -194,10 +185,11 @@
 .hcard.hcard-accent {
   background: var(--clr-accent);
   border-color: transparent;
-  box-shadow: 0 8px 24px rgba(176,122,40, 0.25);
+  box-shadow: var(--shadow-accent);
 }
 .hcard.hcard-accent .hcard-icon {
   background: rgba(255,255,255, 0.2);
+  border-color: rgba(255,255,255, 0.15);
 }
 .hcard.hcard-accent .hcard-num,
 .hcard.hcard-accent .hcard-label { color: #fff; }

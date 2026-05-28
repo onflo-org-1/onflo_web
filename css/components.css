@@ -4,21 +4,22 @@
   align-items: center;
   gap: var(--sp-2);
   font-family: var(--fn-body);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--ls-wide);
   text-transform: uppercase;
-  color: var(--clr-primary-d);
-  background: var(--clr-primary-ll);
-  padding: 0.3rem 0.9rem;
-  border-radius: var(--r-full);
+  color: var(--clr-muted);
+  background: transparent;
+  border: 1px solid var(--clr-border);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--r-sm);
   margin-bottom: var(--sp-4);
 }
 .tag-dot {
   width: 6px; height: 6px;
   background: var(--clr-primary);
   border-radius: 50%;
-  animation: blink 2.4s infinite;
+  animation: none;
 }
 
 /* ── Section heading ── */
@@ -27,12 +28,12 @@
   font-size: clamp(2rem, 3.5vw, 2.9rem);
   font-weight: 800;
   color: var(--clr-text);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--ls-normal);
   line-height: 1.1;
 }
 .section-title em {
-  font-style: normal;
-  color: var(--clr-primary);
+  font-style: italic;
+  color: var(--clr-accent-dark);
 }
 
 .section-sub {
@@ -48,14 +49,16 @@
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  padding: 0.78rem 1.7rem;
-  border-radius: var(--r-full);
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--r-sm);
   font-family: var(--fn-body);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   border: 2px solid transparent;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform var(--t-base);
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast), outline-offset var(--t-fast), outline-color var(--t-fast);
+  outline: 2px solid transparent;
+  outline-offset: 0px;
 }
 .btn-primary {
   background: var(--clr-primary);
@@ -63,16 +66,19 @@
 }
 .btn-primary:hover {
   background: var(--clr-primary-d);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-primary);
+  transform: none;
+  box-shadow: none;
+  outline-color: var(--clr-primary-d);
+  outline-offset: 3px;
 }
 .btn-outline {
   background: transparent;
-  color: var(--clr-primary);
-  border-color: var(--clr-primary);
+  color: var(--clr-text);
+  border-color: oklch(0.70 0.08 220);
 }
 .btn-outline:hover {
-  background: var(--clr-primary);
-  color: #fff;
-  transform: translateY(-2px);
+  background: var(--clr-text);
+  color: var(--clr-surface);
+  border-color: var(--clr-text);
+  transform: none;
 }

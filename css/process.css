@@ -1,4 +1,16 @@
-#process { background: var(--clr-bg-alt); }
+#process {
+  background: var(--clr-dark);
+  color: rgba(255,255,255, 0.70);
+}
+
+#process .section-title     { color: #fff; }
+#process .section-title em  { color: var(--clr-accent); }
+#process .section-sub       { color: rgba(255,255,255, 0.55); }
+#process .tag {
+  background: transparent;
+  border-color: rgba(255,255,255, 0.15);
+  color: rgba(255,255,255, 0.45);
+}
 
 .process-track {
   position: relative;
@@ -13,7 +25,7 @@
   left: calc(12.5% + var(--sp-4));
   right: calc(12.5% + var(--sp-4));
   height: 1px;
-  background: var(--clr-primary-l);
+  background: rgba(255,255,255, 0.08);
   pointer-events: none;
 }
 
@@ -25,37 +37,38 @@
 .step-bubble {
   width: 3.5rem; height: 3.5rem;
   border-radius: 50%;
-  background: var(--clr-surface);
-  border: 2px solid var(--clr-border);
+  background: oklch(0.20 0.025 241);
+  border: 2px solid rgba(255,255,255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--fn-display);
   font-size: 1.1rem;
   font-weight: 900;
-  color: var(--clr-primary);
+  color: var(--clr-accent);
   margin-bottom: var(--sp-5);
   position: relative;
   z-index: 1;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition: background var(--t-base), border-color var(--t-base), color var(--t-base);
 }
 .process-step:hover .step-bubble {
-  background: var(--clr-primary-ll);
-  border-color: var(--clr-primary);
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+  color: oklch(0.14 0.028 241);
 }
 
 .step-title {
   font-family: var(--fn-display);
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--clr-text);
+  color: rgba(255,255,255, 0.90);
   margin-bottom: var(--sp-3);
   letter-spacing: -0.01em;
 }
 
 .step-desc {
   font-size: 0.88rem;
-  color: var(--clr-muted);
+  color: rgba(255,255,255, 0.50);
   line-height: 1.75;
 }
 

@@ -19,8 +19,8 @@ footer {
 }
 
 .footer-brand {
-  padding-left: var(--sp-4);
-  border-left: 2px solid oklch(0.58 0.14 202 / 0.25);
+  padding-left: 0;
+  border-left: none;
 }
 
 .footer-logo img {
@@ -48,12 +48,12 @@ footer {
   align-items: center;
   justify-content: center;
   color: rgba(255,255,255, 0.45);
-  transition: background 0.3s ease, color 0.3s ease, transform var(--t-base);
+  transition: background var(--t-fast), color var(--t-fast);
 }
 .soc-btn:hover {
-  background: var(--clr-primary);
-  color: #fff;
-  transform: translateY(-3px);
+  background: rgba(255,255,255, 0.12);
+  color: rgba(255,255,255, 0.90);
+  transform: none;
 }
 
 .footer-col h4 {

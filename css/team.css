@@ -7,37 +7,38 @@
 .team-card {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
-  border-radius: var(--r-lg);
+  border-radius: var(--r-md);
   padding: var(--sp-8) var(--sp-6) var(--sp-6);
   text-align: center;
-  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+  transition: border-color var(--t-fast);
   position: relative;
   overflow: hidden;
 }
 .team-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--clr-primary-l);
+  transform: none;
+  box-shadow: none;
+  border-color: var(--clr-border);
 }
 
 .team-monogram {
-  width: 72px; height: 72px;
-  border-radius: 50%;
-  border: 2px solid var(--clr-border);
+  width: 64px; height: 64px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--clr-border);
   margin: 0 auto var(--sp-5);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--fn-display);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 900;
-  color: var(--clr-primary);
-  background: var(--clr-primary-ll);
-  transition: background 0.3s ease, border-color 0.3s ease;
+  color: var(--clr-text);
+  background: var(--clr-bg-alt);
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
 }
 .team-card:hover .team-monogram {
-  background: var(--clr-primary-l);
-  border-color: var(--clr-primary);
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+  color: oklch(0.14 0.028 241);
 }
 
 .team-card h3 {
@@ -48,10 +49,10 @@
   color: var(--clr-text);
 }
 .team-role {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--clr-primary);
-  letter-spacing: 0.05em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--clr-muted);
+  letter-spacing: var(--ls-caps);
   text-transform: uppercase;
   margin-bottom: var(--sp-4);
 }

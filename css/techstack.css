@@ -9,7 +9,7 @@
 .stack-cat {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
-  border-radius: var(--r-lg);
+  border-radius: var(--r-md);
   padding: var(--sp-6);
   transition: box-shadow var(--t-base);
 }
@@ -40,14 +40,14 @@
 }
 
 .stack-pill {
-  font-size: 0.82rem;
-  font-weight: 700;
+  font-size: 0.80rem;
+  font-weight: 500;
   color: var(--clr-text);
   background: var(--clr-bg);
   border: 1px solid var(--clr-border);
   padding: 0.3rem 0.75rem;
-  border-radius: var(--r-full);
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  border-radius: var(--r-sm);
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
 }
 .stack-pill:hover {
   background: var(--clr-primary-ll);
@@ -55,9 +55,9 @@
   color: var(--clr-primary-d);
 }
 .stack-pill.expert {
-  background: var(--clr-primary-ll);
-  border-color: var(--clr-primary-l);
-  color: var(--clr-primary-d);
+  background: var(--clr-accent-l);
+  border-color: oklch(0.85 0.08 55);
+  color: var(--clr-accent-dark);
 }
 .stack-pill.expert::after {
   content: ' ★';
