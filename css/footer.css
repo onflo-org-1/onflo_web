@@ -1,5 +1,5 @@
 footer {
-  background: var(--clr-dark);
+  background: linear-gradient(180deg, var(--clr-dark) 0%, var(--clr-dark-2) 100%);
   color: rgba(255,255,255, 0.55);
   padding: var(--sp-16) var(--sp-8) var(--sp-8);
 }
@@ -14,8 +14,13 @@ footer {
   grid-template-columns: 1.6fr 1fr 1fr;
   gap: var(--sp-16);
   padding-bottom: var(--sp-12);
-  border-bottom: 1px solid rgba(255,255,255, 0.07);
+  border-bottom: 1px solid rgba(255,255,255, 0.10);
   margin-bottom: var(--sp-6);
+}
+
+.footer-brand {
+  padding-left: var(--sp-4);
+  border-left: 2px solid oklch(0.58 0.14 202 / 0.25);
 }
 
 .footer-logo img {
