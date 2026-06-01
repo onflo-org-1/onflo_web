@@ -3,28 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Onflotech — IT Solutions Private Limited</title>
+  <meta name="theme-color" content="#0891b2">
+  <title>Onflotech — IT Solutions | Web, Mobile, Cloud &amp; AI Development</title>
   <meta name="description" content="Onflotech helps small businesses step online, entrepreneurs launch ideas, and communities get free utility tools. Affordable, senior-engineer-led IT delivery.">
   <meta name="keywords" content="IT solutions, web development, mobile app development, cloud DevOps, AI automation, small business technology, Flutter, React, Spring Boot, Azure, Hyderabad, India">
   <meta name="author" content="Onflotech IT Solutions Private Limited">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.onflotech.com/">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
 
   <!-- Open Graph (Facebook, LinkedIn, WhatsApp previews) -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://www.onflotech.com/">
-  <meta property="og:title"       content="Onflotech — IT Solutions Private Limited">
+  <meta property="og:title"       content="Onflotech — IT Solutions | Web, Mobile, Cloud &amp; AI Development">
   <meta property="og:description" content="We help small businesses step online, entrepreneurs launch ideas, and communities get free utility tools. Affordable, senior-engineer-led IT delivery.">
   <meta property="og:image"       content="https://www.onflotech.com/assets/logo-light.png">
+  <meta property="og:image:width"  content="1652">
+  <meta property="og:image:height" content="624">
   <meta property="og:site_name"   content="Onflotech">
   <meta property="og:locale"      content="en_IN">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Onflotech — IT Solutions Private Limited">
+  <meta name="twitter:title"       content="Onflotech — IT Solutions | Web, Mobile, Cloud &amp; AI Development">
   <meta name="twitter:description" content="We build for small businesses, entrepreneurs, and communities. Affordable IT delivery by senior engineers.">
   <meta name="twitter:image"       content="https://www.onflotech.com/assets/logo-light.png">
+  <meta name="twitter:image:alt"   content="Onflotech IT Solutions logo">
   <meta name="google-site-verification" content="nvVrSA9aYkV7o0q-USk85xCNaADxVuApzDOe_xKST8Y" />
+
+  <!-- Preload critical above-the-fold image -->
+  <link rel="preload" as="image" href="assets/logo-transparent.png">
+
   <!-- Structured Data (Google rich results) -->
   <script type="application/ld+json">
   {
@@ -37,6 +49,12 @@
     "email": "contactus@onflotech.com",
     "foundingDate": "2026",
     "areaServed": "Worldwide",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "addressCountry": "IN"
+    },
     "serviceType": [
       "Web Development",
       "Mobile App Development",
@@ -50,7 +68,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,700;75,800;75,900;100,700;100,800;100,900&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,700;75,800;75,900;100,700;100,800;100,900&family=Figtree:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,700;75,800;75,900;100,700;100,800;100,900&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
@@ -74,7 +93,7 @@
 <nav id="nav">
   <div class="nav-inner">
     <a href="#home" class="nav-logo" aria-label="Onflotech home">
-      <img src="assets/logo-transparent.png" alt="Onflotech — IT Solutions Private Limited">
+      <img src="assets/logo-transparent.png" alt="Onflotech — IT Solutions Private Limited" width="1652" height="624">
     </a>
     <ul class="nav-menu">
       <li><a href="#home" class="active">Home</a></li>
@@ -92,7 +111,7 @@
 <!-- Mobile menu overlay -->
 <div class="mobile-overlay" id="mobileOverlay">
   <div class="mob-logo">
-    <img src="assets/logo-white-bg.png" alt="Onflotech">
+    <img src="assets/logo-white-bg.png" alt="Onflotech" width="1652" height="624">
   </div>
   <button class="mob-close" onclick="closeMenu()" aria-label="Close menu">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -304,7 +323,7 @@
       </div>
 
       <div class="about-visual fi d2">
-        <img class="about-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Onflotech team collaborating" loading="lazy">
+        <img class="about-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Onflotech team collaborating" loading="lazy" width="800" height="533">
         <div class="about-badge">
           <strong>100%</strong>
           <span>Remote-first</span>
@@ -603,7 +622,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="assets/logo-transparent.png" alt="Onflotech">
+          <img src="assets/logo-transparent.png" alt="Onflotech" width="1652" height="624">
         </div>
         <p>Making technology accessible for small businesses, entrepreneurs, and communities — one product at a time. Since 2026.</p>
         <div class="socials">
