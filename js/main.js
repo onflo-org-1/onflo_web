@@ -1,76 +1,173 @@
-/* ── Nav scroll shadow + active link ── */
-const nav      = document.getElementById('nav');
+/* =========================================================
+   NAVBAR + ACTIVE SECTION HIGHLIGHT
+========================================================= */
+
+const nav = document.getElementById('nav');
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
 
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 10);
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 130) current = s.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
-  });
-}, { passive: true });
+const hamburger = document.getElementById('hamburger');
+const mobileOverlay = document.getElementById('mobileOverlay');
+const mobileLinks = document.querySelectorAll(
+  '#mobileOverlay a[href^="#"]'
+);
 
-/* ── Mobile menu ── */
-function toggleMenu() {
-  const hbg     = document.getElementById('hamburger');
-  const overlay = document.getElementById('mobileOverlay');
-  hbg.classList.toggle('open');
-  overlay.classList.toggle('open');
-  document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+/* Open menu */
+function openMenu() {
+  hamburger.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+
+  mobileOverlay.classList.add('open');
+
+  /* Keep navbar above overlay */
+  nav.classList.add('menu-open');
+
+  document.body.style.overflow = 'hidden';
 }
+
+/* Close menu */
 function closeMenu() {
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('mobileOverlay').classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+
+  mobileOverlay.classList.remove('open');
+
+  nav.classList.remove('menu-open');
+
   document.body.style.overflow = '';
 }
 
-/* ── Scroll fade-in ── */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+/* Toggle menu */
+function toggleMenu() {
+  if (mobileOverlay.classList.contains('open')) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+}
 
-document.querySelectorAll('.fi').forEach(el => observer.observe(el));
+/* Hamburger click */
+hamburger?.addEventListener('click', toggleMenu);
 
-/* ── Contact form → Web3Forms ── */
+/* Close menu after clicking a mobile link */
+mobileLinks.forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+/* Close menu on ESC */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeMenu();
+  }
+});
+
+/* =========================================================
+   SCROLL EFFECTS
+========================================================= */
+
+window.addEventListener(
+  'scroll',
+  () => {
+    /* Navbar shadow on scroll */
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+
+    /* Active navigation link */
+    let current = '';
+
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 130) {
+        current = section.id;
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.toggle(
+        'active',
+        link.getAttribute('href') === `#${current}`
+      );
+    });
+  },
+  { passive: true }
+);
+
+/* =========================================================
+   FADE-IN ANIMATIONS
+========================================================= */
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('vis');
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  }
+);
+
+document
+  .querySelectorAll('.fi')
+  .forEach(element => observer.observe(element));
+
+/* =========================================================
+   CONTACT FORM (WEB3FORMS)
+========================================================= */
+
 async function handleSubmit(e) {
   e.preventDefault();
-  const btn  = document.getElementById('submitBtn');
+
   const form = e.target;
+  const btn = document.getElementById('submitBtn');
 
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
   try {
-    const res  = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: new FormData(form)
-    });
-    const data = await res.json();
+    const response = await fetch(
+      'https://api.web3forms.com/submit',
+      {
+        method: 'POST',
+        body: new FormData(form)
+      }
+    );
 
-    if (data.success) {
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#0d9488';
-      form.reset();
-      setTimeout(() => {
-        btn.textContent = 'Send Message →';
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 3200);
-    } else {
-      throw new Error(data.message || 'Submission failed');
+    const data = await response.json();
+
+    if (!data.success) {
+      throw new Error(
+        data.message || 'Submission failed'
+      );
     }
-  } catch {
-    btn.textContent = 'Failed — please try again';
-    btn.style.background = '#ef4444';
-    btn.disabled = false;
+
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#0d9488';
+
+    form.reset();
+
     setTimeout(() => {
       btn.textContent = 'Send Message →';
       btn.style.background = '';
+      btn.disabled = false;
+    }, 3200);
+
+  } catch (error) {
+
+    btn.textContent = 'Failed — please try again';
+    btn.style.background = '#ef4444';
+
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      btn.disabled = false;
     }, 3000);
+
+    console.error(error);
   }
 }
