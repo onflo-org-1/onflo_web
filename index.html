@@ -68,8 +68,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,700;75,800;75,900;100,700;100,800;100,900&family=Figtree:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,700;75,800;75,900;100,700;100,800;100,900&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
@@ -88,6 +88,10 @@
   <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
+
+<!-- Custom pointer (dot + trailing teal glow) -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <!-- ─── Navigation ────────────────────────────────────────── -->
 <nav id="nav">
@@ -130,21 +134,21 @@
   <div class="hero-inner">
 
     <div class="hero-text">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        IT Solutions Private Limited
+      <div class="hero-eyebrow">
+        <span class="eyebrow-bar"></span>
+        <span class="eyebrow-label">IT Solutions Private Limited</span>
       </div>
       <h1 class="hero-title">
-        We Build.<br>
-        We Deliver.<br>
-        <em>For Everyone.</em>
+        <span class="hl"><span>We Build.</span></span>
+        <span class="hl"><span>We Deliver.</span></span>
+        <span class="hl"><span><em>For Everyone.</em></span></span>
       </h1>
       <p class="hero-sub">
         For the corner shop needing its first digital presence, the entrepreneur ready to launch, and the community that deserves free tools — we make technology accessible, affordable, and impactful.
       </p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">
-          Get in Touch
+          <span>Get in Touch</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#services" class="btn btn-outline">Our Services</a>
@@ -168,43 +172,26 @@
     </div>
 
     <div class="hero-visual" aria-hidden="true">
-      <div class="orbit-bg">
-        <svg viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="240" cy="240" r="210" stroke="rgba(8,145,178,0.07)" stroke-width="1"/>
-          <circle cx="240" cy="240" r="155" stroke="rgba(8,145,178,0.10)" stroke-width="1"/>
-          <circle cx="240" cy="240" r="95"  stroke="rgba(8,145,178,0.08)" stroke-width="1"/>
-          <path d="M 120 170 C 220 40 420 100 400 260 C 380 400 180 420 120 300"
-                stroke="rgba(8,145,178,0.18)" stroke-width="1.5" fill="none"
-                stroke-dasharray="6 5"/>
-          <circle cx="240" cy="35"  r="4" fill="rgba(8,145,178,0.35)"/>
-          <circle cx="410" cy="155" r="3" fill="rgba(8,145,178,0.25)"/>
-          <circle cx="420" cy="310" r="5" fill="rgba(176,122,40,0.45)"/>
-          <circle cx="240" cy="440" r="3" fill="rgba(8,145,178,0.20)"/>
-          <circle cx="65"  cy="320" r="4" fill="rgba(8,145,178,0.30)"/>
-          <circle cx="75"  cy="160" r="3" fill="rgba(176,122,40,0.30)"/>
-          <circle cx="240" cy="240" r="16" fill="rgba(8,145,178,0.12)"/>
-          <circle cx="240" cy="240" r="8"  fill="rgba(8,145,178,0.25)"/>
-          <circle cx="240" cy="240" r="3"  fill="rgba(8,145,178,0.70)"/>
-        </svg>
-      </div>
+      <div class="hero-glow"></div>
+      <canvas class="hero-net" id="heroNet"></canvas>
       <div class="hero-cards">
         <div class="hcard hcard-1">
           <div class="hcard-icon">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
           <span class="hcard-num">2+</span>
           <span class="hcard-label">Web Applications</span>
         </div>
         <div class="hcard hcard-2 hcard-accent">
           <div class="hcard-icon">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
           </div>
           <span class="hcard-num">6+</span>
           <span class="hcard-label">Android Applications</span>
         </div>
         <div class="hcard hcard-3">
           <div class="hcard-icon">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--clr-primary)" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
           <span class="hcard-num">2</span>
           <span class="hcard-label">Countries Served</span>
@@ -227,7 +214,6 @@
     <div class="services-grid">
 
       <div class="svc-card fi">
-        <span class="svc-num" aria-hidden="true">01</span>
         <div class="svc-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
@@ -238,7 +224,6 @@
       </div>
 
       <div class="svc-card fi d1">
-        <span class="svc-num" aria-hidden="true">02</span>
         <div class="svc-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
@@ -249,7 +234,6 @@
       </div>
 
       <div class="svc-card fi d2">
-        <span class="svc-num" aria-hidden="true">03</span>
         <div class="svc-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
@@ -260,7 +244,6 @@
       </div>
 
       <div class="svc-card fi d3">
-        <span class="svc-num" aria-hidden="true">04</span>
         <div class="svc-icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(8,145,178,1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><circle cx="19" cy="5" r="3"/>

@@ -7,24 +7,34 @@
 .case-card {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
-  border-radius: var(--r-md);
+  border-radius: 20px;
   padding: var(--sp-8);
   position: relative;
   overflow: hidden;
-  transition: box-shadow var(--t-fast), background var(--t-fast);
+  transition: box-shadow var(--t-base), background var(--t-base),
+              transform var(--t-base), border-color var(--t-base);
+}
+.case-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 2px; width: 0;
+  background: var(--clr-primary);
+  transition: width var(--t-slow);
 }
 .case-card:hover {
-  transform: none;
-  box-shadow: var(--shadow-sm);
-  border-color: var(--clr-border);
-  background: oklch(0.990 0.004 220);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-primary);
+  background: var(--clr-warm-surface);
 }
+.case-card:hover::before { width: 100%; }
 
 .case-index {
   font-family: var(--fn-display);
   font-size: 8rem;
-  font-weight: 900;
-  color: oklch(0.93 0.005 220);
+  font-weight: 700;
+  color: oklch(0.94 0.004 250);
   line-height: 0.85;
   position: absolute;
   top: var(--sp-4);
@@ -32,7 +42,9 @@
   user-select: none;
   pointer-events: none;
   letter-spacing: -0.05em;
+  transition: color var(--t-base);
 }
+.case-card:hover .case-index { color: oklch(0.90 0.03 205); }
 
 .case-badges {
   display: flex;
@@ -122,4 +134,9 @@
   .cases-grid { grid-template-columns: 1fr; }
   .case-index { font-size: 4.5rem; line-height: 1; top: var(--sp-3); right: var(--sp-4); }
   .case-card  { padding-right: 5.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-card, .case-card::before, .case-index { transition: none; }
+  .case-card:hover { transform: none; }
 }

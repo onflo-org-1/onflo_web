@@ -9,7 +9,7 @@
 .stack-cat {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
-  border-radius: var(--r-md);
+  border-radius: 20px;
   padding: var(--sp-6);
   transition: box-shadow var(--t-base);
 }

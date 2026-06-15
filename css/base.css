@@ -50,3 +50,40 @@ h1, h2, h3, h4 {
 @media (max-width: 580px) {
   .section { padding: var(--sp-16) var(--sp-5); }
 }
+
+/* ── Custom pointer (dot + trailing teal glow) ── */
+@media (hover: hover) and (pointer: fine) {
+  body { cursor: none; }
+  body a, body button, body input, body textarea, body label, body select { cursor: none; }
+
+  .cursor-dot {
+    position: fixed;
+    top: 0; left: 0;
+    width: 8px; height: 8px;
+    margin: -4px 0 0 -4px;
+    border-radius: 50%;
+    background: var(--clr-text);
+    pointer-events: none;
+    z-index: 10000;
+    transition: width 0.2s var(--ease-out), height 0.2s var(--ease-out),
+                background 0.2s var(--ease-out), margin 0.2s var(--ease-out);
+  }
+  .cursor-dot.hot {
+    width: 44px; height: 44px;
+    margin: -22px 0 0 -22px;
+    background: oklch(0.66 0.145 205 / 0.18);
+  }
+  .cursor-glow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 320px; height: 320px;
+    margin: -160px 0 0 -160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, oklch(0.70 0.155 195 / 0.16), transparent 62%);
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-glow { display: none; }
+}

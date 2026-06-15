@@ -45,7 +45,7 @@
 .stat {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
-  border-radius: var(--r-md);
+  border-radius: 20px;
   padding: var(--sp-5);
   text-align: center;
   transition: transform var(--t-base), box-shadow var(--t-base);
@@ -78,7 +78,7 @@
   width: 100%;
   height: 460px;
   object-fit: cover;
-  border-radius: var(--r-xl);
+  border-radius: 20px;
   box-shadow: var(--shadow-md);
   display: block;
 }

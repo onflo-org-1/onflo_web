@@ -7,7 +7,7 @@
 .testi-card {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
-  border-radius: var(--r-lg);
+  border-radius: 20px;
   padding: var(--sp-6);
   box-shadow: var(--shadow-xs);
   display: flex;

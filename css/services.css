@@ -1,3 +1,4 @@
+/* ── Services — bento layout, rounded, preview icon style ── */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -7,56 +8,57 @@
 .svc-card {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
-  border-radius: var(--r-md);
-  padding: var(--sp-8) var(--sp-8) var(--sp-6);
+  border-radius: 20px;
+  padding: var(--sp-8);
   position: relative;
   overflow: hidden;
   cursor: default;
-  transition: border-color var(--t-fast), background var(--t-fast);
+  transition: border-color var(--t-base), background var(--t-base),
+              transform var(--t-base), box-shadow var(--t-base);
+}
+/* drawn top accent rule */
+.svc-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 2px; width: 0;
+  background: var(--clr-primary);
+  transition: width var(--t-slow);
+}
+/* sliding arrow */
+.svc-card::after {
+  content: "→";
+  position: absolute;
+  bottom: var(--sp-6); right: var(--sp-8);
+  font-family: var(--fn-display);
+  font-size: 1.3rem;
+  color: var(--clr-primary);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity var(--t-base), transform var(--t-base);
 }
 .svc-card:hover {
   border-color: var(--clr-primary);
   background: var(--clr-warm-surface);
-  transform: none;
-  box-shadow: none;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
+.svc-card:hover::before { width: 100%; }
+.svc-card:hover::after { opacity: 1; transform: translateX(0); }
 
-.svc-num {
-  position: absolute;
-  top: var(--sp-4);
-  right: var(--sp-5);
-  font-family: var(--fn-display);
-  font-size: 5rem;
-  font-weight: 900;
-  color: oklch(0.93 0.005 220);
-  line-height: 1;
-  user-select: none;
-  letter-spacing: -0.04em;
-  transition: color var(--t-fast);
-  pointer-events: none;
-}
-.svc-card:hover .svc-num {
-  color: oklch(0.88 0.010 220);
-}
-
+/* bare teal glyph — no bordered box (preview icon style) */
 .svc-icon {
-  width: 50px; height: 50px;
-  border-radius: var(--r-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--sp-5);
-  background: transparent;
-  border: 1px solid var(--clr-border);
-  transition: background var(--t-fast), border-color var(--t-fast);
+  width: auto; height: auto;
+  border: none;
+  background: none;
+  margin-bottom: var(--sp-4);
+  transition: transform var(--t-base);
 }
-.svc-card:hover .svc-icon {
-  background: var(--clr-primary);
-  border-color: var(--clr-primary);
+.svc-icon svg {
+  width: 30px; height: 30px;
+  stroke: var(--clr-primary) !important;
 }
-.svc-card:hover .svc-icon svg {
-  stroke: #fff !important;
-}
+.svc-card:hover .svc-icon { transform: translateY(-3px); }
 
 .svc-card h3 {
   font-family: var(--fn-display);
@@ -65,9 +67,19 @@
   margin-bottom: var(--sp-3);
   color: var(--clr-text);
   letter-spacing: -0.01em;
+  transition: transform var(--t-base);
 }
+.svc-card:hover h3 { transform: translateX(4px); }
+
 .svc-card p {
   font-size: 0.9rem;
   color: var(--clr-muted);
   line-height: 1.75;
+  max-width: 46ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-card, .svc-card::before, .svc-card::after,
+  .svc-icon, .svc-card h3 { transition: none; }
+  .svc-card:hover { transform: none; }
 }

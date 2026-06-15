@@ -3,9 +3,9 @@
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  font-family: var(--fn-body);
+  font-family: var(--fn-mono);
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
   color: var(--clr-muted);
@@ -32,7 +32,7 @@
   line-height: 1.1;
 }
 .section-title em {
-  font-style: italic;
+  font-style: normal;
   color: var(--clr-accent-dark);
 }
 
