@@ -95,6 +95,29 @@
   line-height: 1.75;
 }
 
+/* Googleplay Button */
+.store-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.store-buttons a {
+  display: block;
+  transition: transform .2s ease;
+}
+
+.store-buttons a:hover {
+  transform: translateY(-2px);
+}
+
+.store-buttons img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
 @media (max-width: 768px) {
   .cases-grid { grid-template-columns: 1fr; }
   .case-index { font-size: 4.5rem; line-height: 1; top: var(--sp-3); right: var(--sp-4); }
