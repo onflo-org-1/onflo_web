@@ -139,9 +139,9 @@
 .mobile-overlay .mob-logo {
   position: absolute;
   top: var(--sp-5);
-  left: var(--sp-8);
+  left: var(--sp-5);
 }
-.mobile-overlay .mob-logo img { height: 42px; }
+.mobile-overlay .mob-logo img { height: 38px; width: auto; }
 
 .mobile-overlay a {
   font-family: var(--fn-body);
