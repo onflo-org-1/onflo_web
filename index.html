@@ -363,60 +363,20 @@
     <div class="section-hdr center">
       <div class="tag fi"><span class="tag-dot"></span>Our Work</div>
       <h2 class="section-title fi d1">Products We've <em>Shipped</em></h2>
-      <p class="section-sub fi d2">Real apps built for real problems. Two of which we built for the world, free of charge.</p>
+      <p class="section-sub fi d2">Real apps built for real problems. Several of which we built for the world, free of charge.</p>
     </div>
 
-    <div class="cases-grid">
+    <div class="cases-carousel fi d2">
+      <button class="carousel-btn prev" type="button" aria-label="Previous apps">&#8249;</button>
 
-      <div class="case-card fi">
-        <span class="case-index" aria-hidden="true">01</span>
-        <div class="case-badges">
-          <span class="case-badge platform">Android</span>
-          <span class="case-badge platform">Consumer App</span>
-        </div>
-        <div class="case-name">Scentique</div>
-        <div class="case-tagline">"Which perfume do I wear tonight?"</div>
+      <!-- Cards are rendered from the apps[] data array in js/carousel.js.
+           To add a new app, append one object there — no HTML needed. -->
+      <div class="cases-track" id="casesTrack" tabindex="0" role="region" aria-label="Apps we've shipped"></div>
 
-        <div class="case-block">
-          <div class="case-block-label">The Problem</div>
-          <p>People own beautiful fragrances but wear them to the wrong occasion — a heavy oud to a casual lunch, a light citrus to a black-tie dinner. The decision is always a guess.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-block-label">The Solution</div>
-          <p>A single scan tells you exactly which occasions your perfume is perfect for. No database to browse. No expertise needed. Point, scan, know.</p>
-          <div class="store-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.scentique.scentique" target="_blank">
-              <img src="assets/PlayStore.png" alt="Get it on Google Play">
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="case-card fi d1">
-        <span class="case-index" aria-hidden="true">02</span>
-        <div class="case-badges">
-          <span class="case-badge platform">Android</span>
-          <span class="case-badge social">Free · Society First</span>
-        </div>
-        <div class="case-name">PlantLife AI</div>
-        <div class="case-tagline">"Is my plant dying — and can I fix it at home?"</div>
-
-        <div class="case-block">
-          <div class="case-block-label">The Problem</div>
-          <p>Millions of households own plants they can't identify or diagnose. By the time they notice something is wrong, it's usually too late. Expert advice is expensive and inaccessible.</p>
-        </div>
-        <div class="case-block">
-          <div class="case-block-label">The Solution</div>
-          <p>Point your phone at any plant to instantly identify it, detect disease, and receive home remedy suggestions — no gardening knowledge required. Built free, for everyone, always.</p>
-          <div class="store-buttons">
-            <a href="https://play.google.com/store/apps/details?id=com.nani.plantlife_ai" target="_blank">
-              <img src="assets/PlayStore.png" alt="Get it on Google Play">
-            </a>
-          </div>
-        </div>
-      </div>
-
+      <button class="carousel-btn next" type="button" aria-label="Next apps">&#8250;</button>
     </div>
+
+    <div class="carousel-dots" id="casesDots" role="tablist" aria-label="Choose app"></div>
   </div>
 </section>
 
@@ -661,5 +621,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/carousel.js"></script>
 </body>
 </html>
