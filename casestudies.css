@@ -1,0 +1,297 @@
+/* ─── Carousel shell ─────────────────────────────── */
+.cases-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
+.cases-track {
+  display: flex;
+  gap: var(--sp-6);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding: 0;
+  padding: var(--sp-2) 2px var(--sp-6);
+  flex: 1 1 auto;
+  min-width: 0;
+  scrollbar-width: none;
+}
+
+.cases-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cases-track:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 4px;
+  border-radius: 20px;
+}
+
+/* 3 compact tiles per view — content fills the tile, no empty side gap */
+.cases-track>.case-card {
+  flex: 0 0 calc((100% - 2 * var(--sp-6)) / 3);
+  scroll-snap-align: start;
+}
+
+/* Arrow buttons */
+.carousel-btn {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  color: var(--clr-text);
+  font-size: 1.6rem;
+  line-height: 1;
+  font-family: var(--fn-display);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background var(--t-base), border-color var(--t-base),
+    transform var(--t-base), box-shadow var(--t-base), opacity var(--t-base);
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.carousel-btn:disabled:hover {
+  background: var(--clr-surface);
+  border-color: var(--clr-border);
+  color: var(--clr-text);
+}
+
+/* Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: var(--clr-border);
+  cursor: pointer;
+  transition: background var(--t-base), transform var(--t-base);
+}
+
+.carousel-dot.active {
+  background: var(--clr-primary);
+  transform: scale(1.25);
+}
+
+.case-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 20px;
+  padding: var(--sp-6);
+  padding-right: 4rem;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--t-base), background var(--t-base),
+    transform var(--t-base), border-color var(--t-base);
+}
+
+.case-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--clr-primary);
+  transition: width var(--t-slow);
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-primary);
+  background: var(--clr-warm-surface);
+}
+
+.case-card:hover::before {
+  width: 100%;
+}
+
+.case-index {
+  font-family: var(--fn-display);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: oklch(0.94 0.004 250);
+  line-height: 0.85;
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-4);
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+  transition: color var(--t-base);
+}
+
+.case-card:hover .case-index {
+  color: oklch(0.90 0.03 205);
+}
+
+.case-badges {
+  display: flex;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-5);
+}
+
+.case-badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: var(--sp-1);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--r-sm);
+}
+
+.case-badge.platform {
+  background: var(--clr-primary-ll);
+  color: var(--clr-primary-d);
+}
+
+.case-badge.social {
+  background: var(--clr-accent-l);
+  color: var(--clr-accent-dark);
+}
+
+.case-name {
+  font-family: var(--fn-display);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--clr-text);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-2);
+}
+
+.case-tagline {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-accent-dark);
+  margin-bottom: var(--sp-4);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.case-tagline--nowrap {
+  white-space: nowrap;
+}
+
+/* Compact one-line description (replaces Problem/Solution blocks) */
+.case-desc {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  line-height: 1.7;
+  margin-bottom: var(--sp-5);
+}
+
+.case-block {
+  margin-bottom: var(--sp-4);
+}
+
+.case-block-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-muted);
+  margin-bottom: var(--sp-2);
+}
+
+.case-block p {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  line-height: 1.75;
+}
+
+/* Googleplay Button */
+.store-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.store-buttons a {
+  display: block;
+  transition: transform .2s ease;
+}
+
+.store-buttons a:hover {
+  transform: translateY(-2px);
+}
+
+.store-buttons img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+/* 2-up on tablets */
+@media (max-width: 980px) {
+  .cases-track>.case-card {
+    flex: 0 0 calc((100% - var(--sp-6)) / 2);
+  }
+}
+
+/* 1-up on phones */
+@media (max-width: 680px) {
+  .carousel-btn {
+    display: none;
+  }
+
+  .cases-track {
+    gap: var(--sp-4);
+    scroll-padding-left: var(--sp-1);
+  }
+
+  .cases-track>.case-card {
+    flex: 0 0 88%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .case-card,
+  .case-card::before,
+  .case-index,
+  .carousel-btn,
+  .carousel-dot {
+    transition: none;
+  }
+
+  .case-card:hover {
+    transform: none;
+  }
+
+  .cases-track {
+    scroll-behavior: auto;
+  }
+}
