@@ -1,6 +1,6 @@
 #commitment {
   background: var(--clr-dark-2);
-  color: rgba(255,255,255, 0.65);
+  color: rgba(255, 255, 255, 0.65);
   padding: var(--sp-20) var(--sp-8);
 }
 
@@ -14,16 +14,16 @@
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  font-size: 0.68rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
-  color: rgba(255,255,255, 0.40);
+  color: rgba(255, 255, 255, 0.40);
   background: transparent;
   padding: 0.25rem 0.65rem;
   border-radius: 0;
   margin-bottom: var(--sp-6);
-  border: 1px solid rgba(255,255,255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .commitment-title {
@@ -52,17 +52,20 @@
   text-align: left;
   margin-bottom: var(--sp-10);
 }
+
 .promise-item {
   display: flex;
   align-items: flex-start;
   gap: var(--sp-3);
   font-size: 0.88rem;
   font-weight: 600;
-  color: rgba(255,255,255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.5;
 }
+
 .promise-dot {
-  width: 5px; height: 5px;
+  width: 5px;
+  height: 5px;
   background: var(--clr-accent);
   border-radius: 0;
   flex-shrink: 0;
@@ -85,6 +88,7 @@
   outline: 2px solid transparent;
   outline-offset: 0px;
 }
+
 .commitment-cta:hover {
   background: #fff;
   transform: none;
@@ -94,6 +98,11 @@
 }
 
 @media (max-width: 580px) {
-  .commitment-promises { grid-template-columns: 1fr; }
-  #commitment { padding: var(--sp-16) var(--sp-5); }
+  .commitment-promises {
+    grid-template-columns: 1fr;
+  }
+
+  #commitment {
+    padding: var(--sp-16) var(--sp-5);
+  }
 }

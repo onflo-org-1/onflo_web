@@ -18,11 +18,19 @@
   min-width: 0;
   scrollbar-width: none;
 }
-.cases-track::-webkit-scrollbar { display: none; }
-.cases-track:focus-visible { outline: 2px solid var(--clr-primary); outline-offset: 4px; border-radius: 20px; }
+
+.cases-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cases-track:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 4px;
+  border-radius: 20px;
+}
 
 /* 3 compact tiles per view — content fills the tile, no empty side gap */
-.cases-track > .case-card {
+.cases-track>.case-card {
   flex: 0 0 calc((100% - 2 * var(--sp-6)) / 3);
   scroll-snap-align: start;
 }
@@ -43,9 +51,10 @@
   display: grid;
   place-items: center;
   transition: background var(--t-base), border-color var(--t-base),
-              transform var(--t-base), box-shadow var(--t-base), opacity var(--t-base);
+    transform var(--t-base), box-shadow var(--t-base), opacity var(--t-base);
   z-index: 2;
 }
+
 .carousel-btn:hover {
   background: var(--clr-primary);
   border-color: var(--clr-primary);
@@ -53,12 +62,14 @@
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
+
 .carousel-btn:disabled {
   opacity: 0.35;
   cursor: default;
   transform: none;
   box-shadow: none;
 }
+
 .carousel-btn:disabled:hover {
   background: var(--clr-surface);
   border-color: var(--clr-border);
@@ -72,6 +83,7 @@
   gap: var(--sp-2);
   margin-top: var(--sp-4);
 }
+
 .carousel-dot {
   width: 9px;
   height: 9px;
@@ -82,6 +94,7 @@
   cursor: pointer;
   transition: background var(--t-base), transform var(--t-base);
 }
+
 .carousel-dot.active {
   background: var(--clr-primary);
   transform: scale(1.25);
@@ -96,27 +109,34 @@
   position: relative;
   overflow: hidden;
   transition: box-shadow var(--t-base), background var(--t-base),
-              transform var(--t-base), border-color var(--t-base);
+    transform var(--t-base), border-color var(--t-base);
 }
+
 .case-card::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  height: 2px; width: 0;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
   background: var(--clr-primary);
   transition: width var(--t-slow);
 }
+
 .case-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: var(--clr-primary);
   background: var(--clr-warm-surface);
 }
-.case-card:hover::before { width: 100%; }
+
+.case-card:hover::before {
+  width: 100%;
+}
 
 .case-index {
   font-family: var(--fn-display);
-  font-size: 4rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: oklch(0.94 0.004 250);
   line-height: 0.85;
@@ -128,17 +148,21 @@
   letter-spacing: -0.05em;
   transition: color var(--t-base);
 }
-.case-card:hover .case-index { color: oklch(0.90 0.03 205); }
+
+.case-card:hover .case-index {
+  color: oklch(0.90 0.03 205);
+}
 
 .case-badges {
   display: flex;
-  flex-wrap: wrap;
   gap: var(--sp-2);
   margin-bottom: var(--sp-5);
 }
+
 .case-badge {
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
   gap: var(--sp-1);
   font-size: 0.68rem;
   font-weight: 700;
@@ -147,10 +171,12 @@
   padding: 0.25rem 0.7rem;
   border-radius: var(--r-sm);
 }
+
 .case-badge.platform {
   background: var(--clr-primary-ll);
   color: var(--clr-primary-d);
 }
+
 .case-badge.social {
   background: var(--clr-accent-l);
   color: var(--clr-accent-dark);
@@ -174,6 +200,10 @@
   letter-spacing: 0.01em;
 }
 
+.case-tagline--nowrap {
+  white-space: nowrap;
+}
+
 /* Compact one-line description (replaces Problem/Solution blocks) */
 .case-desc {
   font-size: 0.9rem;
@@ -185,6 +215,7 @@
 .case-block {
   margin-bottom: var(--sp-4);
 }
+
 .case-block-label {
   font-size: 0.68rem;
   font-weight: 700;
@@ -193,6 +224,7 @@
   color: var(--clr-muted);
   margin-bottom: var(--sp-2);
 }
+
 .case-block p {
   font-size: 0.9rem;
   color: var(--clr-muted);
@@ -224,19 +256,42 @@
 
 /* 2-up on tablets */
 @media (max-width: 980px) {
-  .cases-track > .case-card { flex: 0 0 calc((100% - var(--sp-6)) / 2); }
+  .cases-track>.case-card {
+    flex: 0 0 calc((100% - var(--sp-6)) / 2);
+  }
 }
 
 /* 1-up on phones */
 @media (max-width: 680px) {
-  .carousel-btn { display: none; }
-  .cases-track { gap: var(--sp-4); scroll-padding-left: var(--sp-1); }
-  .cases-track > .case-card { flex: 0 0 88%; }
+  .carousel-btn {
+    display: none;
+  }
+
+  .cases-track {
+    gap: var(--sp-4);
+    scroll-padding-left: var(--sp-1);
+  }
+
+  .cases-track>.case-card {
+    flex: 0 0 88%;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .case-card, .case-card::before, .case-index,
-  .carousel-btn, .carousel-dot { transition: none; }
-  .case-card:hover { transform: none; }
-  .cases-track { scroll-behavior: auto; }
+
+  .case-card,
+  .case-card::before,
+  .case-index,
+  .carousel-btn,
+  .carousel-dot {
+    transition: none;
+  }
+
+  .case-card:hover {
+    transform: none;
+  }
+
+  .cases-track {
+    scroll-behavior: auto;
+  }
 }

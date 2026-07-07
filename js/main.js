@@ -43,9 +43,11 @@ function closeMenu() {
 
 /* Toggle menu */
 function toggleMenu() {
-  if (!mobileOverlay.classList.contains('open')) {
+  if (mobileOverlay.classList.contains('open')) {
+    closeMenu();
+  } else {
     openMenu();
-  } 
+  }
 }
 
 /* Hamburger click */
