@@ -14,6 +14,7 @@ const apps = [
   {
     name: 'Scentique',
     tagline: 'Which perfume do I wear tonight?',
+    nowrapTagline: true,
     badges: [{ label: 'Android', type: 'platform' }, { label: 'Consumer App', type: 'platform' }],
     desc: 'Scan any perfume to instantly know which occasions it suits best — no expertise needed.',
     playUrl: 'https://play.google.com/store/apps/details?id=com.scentique.scentique'
@@ -42,6 +43,7 @@ const apps = [
   {
     name: 'WakeMust',
     tagline: 'Alarms that let you fall back asleep?',
+    nowrapTagline: true,
     badges: [{ label: 'Android', type: 'platform' }, { label: 'Consumer App', type: 'platform' }],
     desc: "A smart alarm that won't quit until you're genuinely awake — challenges that force you up.",
     playUrl: 'https://play.google.com/store/apps/details?id=com.wakemust'
